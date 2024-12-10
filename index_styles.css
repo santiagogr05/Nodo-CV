@@ -41,7 +41,7 @@
     height: 100%;
     z-index: 1;
 }
-.card{
+.card, .card_back{
     display: flex;
     width: 50%;
     height: 60%;
@@ -53,24 +53,19 @@
     box-shadow: 0.5px 0.5px 10px 0 #939e8f;
     z-index: 15;
 
-    transition: transform 0.6s ease;
-}
-.card_back{
-    display: flex;
-    width: 50%;
-    height: 60%;
-    
-    position: absolute;
-    left: calc(25%);
-    top: calc(20%);
-
-    box-shadow: 0.5px 0.5px 10px 0 #939e8f;
-    z-index: 10;
-
-    transition: transform 0.6s ease;
     backface-visibility: hidden;
+    transition: transform 0.6s ease;
 }
 
+ .card_back{
+    transform: rotateY(180deg);
+ }
+.container:hover .card{
+    transform: rotateY(180deg);
+}
+.container:hover .card_back{
+    transform: rotateY(360deg);
+}
 
 .card_left{
     display: flex;
@@ -88,15 +83,13 @@
     
 }
 
-.card .card_right:hover {
-    display: none;
-}
 .card_left-picture{
    position: relative   ;
     width: 60%;
-    height: calc(width - 40px);
+    height: calc(width);
     top: -50px;
     left: calc(20%);
+    border-radius: 50%;
 }
 .card_left-name{
    position: relative;
@@ -111,10 +104,15 @@ p.card_left-description {
 }
 .card_left-social {
     display: flex;
+    flex-flow: column nowrap;
     background-color: #D3D9D1;
-    position: relative;
-    top: 66px;    
-    justify-content: space-between;
+    position: absolute;
+    height: 150px;
+    top: 275px;    
+    left: 20px;
+    border-radius: 10px;
+    
+    z-index: 10;
     box-shadow: 0.5px 0.5px 5px 0 #939e8f;
 }
 .card_left-social a {
@@ -123,12 +121,11 @@ p.card_left-description {
     width: 40px;
     height: 40px;
     top: 2px;
+    margin-top: 15px;
+    margin-left: 5px;
 }
 .card_left-social a:first-child{
-    margin-left: 50px;
-}
-.card_left-social a:last-child{
-    margin-right: 50px;
+    margin-top: 0;
 }
 .card_left-social img {
     width: 35px;
@@ -146,9 +143,8 @@ p.card_left-description {
     left: calc(50% - 50px);
 }
 
-/* --------------------------------------------------------- */
 .card .card_right{
-    display: none; 
+    display: flex; 
     flex-flow: column nowrap;
 }
 .card .card_right h1{
@@ -162,9 +158,9 @@ p.card_left-description {
     font-style: italic;
     font-size: 25px;
     top: 100px;
-    left: 50px;
+    padding-left: 40px;
 }
-.card_back .card_right p{
+.card_back .card_right .card_right-description{
     font-size: 18px;
     position: relative;
     padding: 0 40px;
@@ -174,29 +170,71 @@ p.card_left-description {
 }
 .skills{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+    position: relative;
+    justify-content: right;
+    width: 70%;
+    height: 95%;
+    top: calc(-55%);
+    left: calc(95%);
+    /* background-color:violet; */
 }
 .skills div {
     position: relative;
     width: 25%;
-    height: calc(width);
+    height: 15vh;
     
-    top: 20px;
+    top: px;
     text-align: center;
     justify-content: center;
     justify-content: space-around;
 }
 .skillsdiv p{
+    font-size: 25px;
     display: flex;
     position: relative;
     top: -50px;
+
     
 }
 .skills div img{
-    width: 30%;
+    width: 70%;
     padding: 0;
     margin: 0;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
+}
+@media (max-width: 1200px) {
+    .skills{
+        top: calc(-70%);
+    }
 }
 
+/* 1120 change to device view */
+@media (max-width: 1120px) {
+    .container{
+        display: none;
+    }
+    .card_left-social {
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: #D3D9D1;
+        position: absolute;
+        height: 50px;
+        top: calc(10%);    
+        left: calc(50% - 50px);
+        border-radius: 10px;
+        align-items: center;
+        
+        z-index: 10;
+        box-shadow: 0.5px 0.5px 5px 0 #939e8f;
+    }
+    .card_left-social a {
+        text-decoration: none;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin-top: 0;
+        
+    }
 
+}
