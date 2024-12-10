@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index_styles.css">
+    <script src="./LanguageSwitcher.js" defer></script>
     <title>SGR-CV</title>
 </head>
 <body>
     
     <main class="main">
+
+        <div id="language-switcher-desktop">
+            <button onclick="switchLanguage('es')">ESP</button>
+        </div>
+          
 
         <div class="background">
             <div class="background_left"></div>
@@ -22,15 +28,15 @@
 
                     <img src="./assets/ProfilePicture.jpg" alt="Default Profile picture" title="Profile Picture" class="card_left-picture">
                     <h2 class="card_left-name">Santiago <br>Giraldo</h2>
-                    <p class="card_left-description">Desarrollador Web</p>    
+                    <p class="card_left-description">Web developer</p>    
 
                     
                 </div>
                 
 
                 <div class="card_right">
-                    <h1>Hola</h1>
-                    <h3>Aquí un poco de quién soy <br> & qué hago</h3>
+                    <h1>Hello</h1>
+                    <h3>Here's who i am <br>& what i do</h3>
                     <img src="./assets/cursor.svg" alt="Cursor" class="cursor">
                 </div>
             </div>
@@ -38,7 +44,7 @@
             <div class="card_back">
                 
                 <div class="card_right">                    
-                    <p class="card_right-description">Estudiante de ingeniería de sistemas apasionado por el desarrollo web y la creación de soluciones innovadoras. Competente en Java, Spring Boot, SQL, HTML, CSS, JavaScript y Git, con fuertes habilidades en resolución de problemas, trabajo en equipo e ingenio. Autodirigido y con ganas de aprender, estoy buscando un papel de desarrollador web Junior donde pueda contribuir y crecer como desarrollador. Fuera de la tecnología, soy un miembro activo de una banda sinfónica, mostrando dedicación y trabajo en equipo como saxofonista.</p>
+                    <p class="card_right-description">A systems engineering student passionate about web development and creating innovative solutions. Proficient in Java, Spring Boot, SQL, HTML, CSS, JavaScript, and Git, with strong skills in problem-solving, teamwork, and resourcefulness. Self-driven and eager to learn, I am seeking an entry-level web development role where I can contribute and grow as a developer. Outside of technology, I am an active member of a symphonic band, showcasing dedication and teamwork as a saxophone player.</p>
 
                     <div class="skills">
                         <div>
@@ -65,12 +71,51 @@
                             <img src="./assets/git-logo.svg" alt="git logo">
                             <p>Git</p>
                         </div>
+
+                        <div>
+                            <img src="./assets/javascript-logo.svg" alt="git logo">
+                            <p>JavaScript</p>
+                        </div>
+                        <div>
+                            <img src="./assets/sql.svg" alt="git logo">
+                            <p>SQL</p>
+                        </div>
                     </div>
 
 
                 </div>
             </div>
         </div>
+
+        <div class="phoneCard-container">
+
+            <div class="phoneCard" id="flippingCard">
+
+              <div class="phoneCard-front">
+
+                <div class="up"></div>
+                <div class="down"></div>
+                <div class="content">
+                    <img src="./assets/ProfilePicture.jpg" alt="Profile picture">
+                    <h2>Santiago <br>Giraldo</h2>
+                    <p class="role">Desarrollador Web</p>
+
+                </div>
+              </div>
+
+              <div class="phoneCard-back">
+                <div class="up"></div>
+                <div class="down"></div>
+                <div class="content">
+                    <p>Passionate about web development and skilled in Java, Spring Boot, HTML, CSS, JavaScript, and Git. Currently pursuing a degree in systems engineering, with a strong foundation in problem-solving, teamwork, and self-learning. Seeking an entry-level web development role to apply and grow my skills.</p>                    
+                    
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+
         <div class="card_left-social">
 
             <a href="https://twitter.com" target='_blank'>
@@ -86,11 +131,7 @@
         </div>
         
     </main>
-    <footer>
-        <ul>
-            li*
-        </ul>
-    </footer>
+    
 
 </body>
 </html>

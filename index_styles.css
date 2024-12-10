@@ -1,8 +1,9 @@
 :root{
     --background-left-light:#ACBAA8;
     --background-right-light:#D3D9D1;
-    --background-right-dark:#72826E;
-    --background-left-dark:#8E968B;
+    --background-left-dark:#72826E;
+    --background-right-dark:#8E968B;
+   
 }
 
 
@@ -22,7 +23,25 @@
     background-color: antiquewhite;
     
 }
+#language-switcher-desktop{
+    display: flex;
+    position: absolute;
+    left: calc(80%);
+    top: calc(10%);
 
+    z-index: 50;
+}
+#language-switcher-desktop button{
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--background-left-light);
+}
+#language-switcher-desktop button:hover{
+    background-color: var(--background-right-light);
+    box-shadow: 0.5px 0.5px 10px 0 #939e8f;
+}
 .background {
     display: flex;
     width: 100%;
@@ -53,6 +72,7 @@
     box-shadow: 0.5px 0.5px 10px 0 #939e8f;
     z-index: 15;
 
+    perspective: 1000px;
     backface-visibility: hidden;
     transition: transform 0.6s ease;
 }
@@ -175,7 +195,7 @@ p.card_left-description {
     justify-content: right;
     width: 70%;
     height: 95%;
-    top: calc(-55%);
+    top: calc(-50%);
     left: calc(95%);
     /* background-color:violet; */
 }
@@ -203,6 +223,10 @@ p.card_left-description {
     margin: 0;
     /* background-color: yellowgreen; */
 }
+
+.phoneCard-container{
+    display: none;
+}
 @media (max-width: 1200px) {
     .skills{
         top: calc(-70%);
@@ -214,6 +238,10 @@ p.card_left-description {
     .container{
         display: none;
     }
+    #language-switcher-desktop{
+        display: none;
+    }
+
     .card_left-social {
         display: flex;
         flex-flow: row nowrap;
@@ -221,7 +249,7 @@ p.card_left-description {
         position: absolute;
         height: 50px;
         top: calc(10%);    
-        left: calc(50% - 50px);
+        left: calc(50% - 100px);
         border-radius: 10px;
         align-items: center;
         
@@ -235,6 +263,192 @@ p.card_left-description {
         height: 40px;
         margin-top: 0;
         
+    }
+
+    /* Phone flipping card */
+
+    .phoneCard-container{
+        display: flex;
+        position: absolute;
+        width: 40%;
+        height: 50%;
+        left: calc(45% - 150px);
+        
+        z-index: 50;
+        perspective: 1000px;
+        transition: transform 0.6s ease;
+        box-shadow: 1px 0.5px 5px 0 #939e8f;
+        border-radius: 10px;
+    }
+    .phoneCard-front{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+        border-radius: 10px;
+
+        
+    }
+
+    .phoneCard-back{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        transition: transform 0.6s ease;
+        border-radius: 10px;        
+    }
+
+    .phoneCard-container:hover .phoneCard-front{
+        transform: rotateY(180deg);
+    }
+    .phoneCard-container:hover .phoneCard-back{
+        transform: rotateY(360deg);
+    }
+    .up{
+        width: 100%;
+        height: 30%;
+        background-color: var(--background-left-light);
+        border-radius: 10px 10px 0 0;
+    }
+    .phoneCard-back .up {
+        background-color: var(--background-right-light);
+    }
+    .down{
+        width: 100%;
+        height: 70%;
+        background-color: var(--background-right-light);
+        border-radius: 0 0 10px 10px;
+    }
+    .content{
+        display: flex;
+    }
+    .content img{
+        width: 40%;
+        height: calc(width - 50px);
+        position: absolute;
+        top: calc(8%);
+        left: calc(28%);
+        border-radius: 50%;
+        border: 8px solid var(--background-left-light);
+    }
+    .content h2{
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: calc(35%);
+    }
+    .content p{
+        position: absolute;
+        top: 5%;
+        left: 10px;
+    }
+    p.role{
+        position: absolute;
+        top: 70%;
+        left: 30%;
+    }
+}
+@media (max-width: 670px) {
+    .container{
+        display: none;
+    }
+    #language-switcher-desktop{
+        display: none;
+    }
+
+    .card_left-social {
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: #D3D9D1;
+        position: absolute;
+        height: 50px;
+        top: calc(10%);    
+        left: calc(50% - 70px);
+        border-radius: 10px;
+        align-items: center;
+        
+        z-index: 10;
+        box-shadow: 0.5px 0.5px 5px 0 #939e8f;
+    }
+    .card_left-social a {
+        text-decoration: none;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin-top: 0;
+        
+    }
+
+    /* Phone flipping card */
+
+    .phoneCard-container{
+        display: flex;
+        position: absolute;
+        width: 60%;
+        height: 50%;
+        left: calc(50% - 120px);
+        
+        z-index: 50;
+        perspective: 1000px;
+        transition: transform 0.6s ease;
+        box-shadow: 1px 0.5px 5px 0 #939e8f;
+    }
+    .phoneCard-front{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease;
+
+        
+    }
+
+    .phoneCard-back{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        transition: transform 0.6s ease;
+
+        background-color: aliceblue;
+    }
+
+    .phoneCard-container:hover .phoneCard-front{
+        transform: rotateY(180deg);
+    }
+    .phoneCard-container:hover .phoneCard-back{
+        transform: rotateY(360deg);
+    }
+    .content h2{
+        justify-content: center;
+        position: absolute;
+        top: 45%;
+        left: calc(33%);
+    }
+    p.role{
+        position: absolute;
+        top: 60%;
+        left: 25%;
     }
 
 }
