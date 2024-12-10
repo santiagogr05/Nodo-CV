@@ -3,7 +3,7 @@ function switchLanguage(lang) {
     localStorage.setItem("language", lang); // Save the selected language in localStorage
 
     if (lang === "es") {
-        window.location.href = "index-es.html"; // Redirect to the Spanish version
+        window.location.href = "index.html"; // Redirect to the Spanish version
     } else if (lang === "en") {
         window.location.href = "index-en.html"; // Redirect to the English version
     }
