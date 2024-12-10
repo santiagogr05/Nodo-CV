@@ -1,0 +1,202 @@
+:root{
+    --background-left-light:#ACBAA8;
+    --background-right-light:#D3D9D1;
+    --background-right-dark:#72826E;
+    --background-left-dark:#8E968B;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    background-color: antiquewhite;
+    
+}
+
+.background {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.background_left {
+    background-color: var(--background-left-light);
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+}
+.background_right {
+    background-color: var(--background-right-light);
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+}
+.card{
+    display: flex;
+    width: 50%;
+    height: 60%;
+    
+    position: absolute;
+    left: calc(25%);
+    top: calc(20%);
+
+    box-shadow: 0.5px 0.5px 10px 0 #939e8f;
+    z-index: 15;
+
+    transition: transform 0.6s ease;
+}
+.card_back{
+    display: flex;
+    width: 50%;
+    height: 60%;
+    
+    position: absolute;
+    left: calc(25%);
+    top: calc(20%);
+
+    box-shadow: 0.5px 0.5px 10px 0 #939e8f;
+    z-index: 10;
+
+    transition: transform 0.6s ease;
+    backface-visibility: hidden;
+}
+
+
+.card_left{
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+
+    background-color: var(--background-left-light);
+    width: 40%;
+    height: 100%;
+}
+.card_right {
+    background-color: var(--background-right-light);
+    width: 60%;
+    height: 100%;
+    
+}
+
+.card .card_right:hover {
+    display: none;
+}
+.card_left-picture{
+   position: relative   ;
+    width: 60%;
+    height: calc(width - 40px);
+    top: -50px;
+    left: calc(20%);
+}
+.card_left-name{
+   position: relative;
+   top: -20px;
+   text-align: center;
+}
+p.card_left-description {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    top: 15px;
+}
+.card_left-social {
+    display: flex;
+    background-color: #D3D9D1;
+    position: relative;
+    top: 66px;    
+    justify-content: space-between;
+    box-shadow: 0.5px 0.5px 5px 0 #939e8f;
+}
+.card_left-social a {
+    text-decoration: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 2px;
+}
+.card_left-social a:first-child{
+    margin-left: 50px;
+}
+.card_left-social a:last-child{
+    margin-right: 50px;
+}
+.card_left-social img {
+    width: 35px;
+    height: 35px;    
+}
+
+/* Right side styling */
+
+.cursor{
+    display: flex;
+    position: relative;
+    width: 20%;
+    height: calc(width - 20px);
+    top: 170px;
+    left: calc(50% - 50px);
+}
+
+/* --------------------------------------------------------- */
+.card .card_right{
+    display: none; 
+    flex-flow: column nowrap;
+}
+.card .card_right h1{
+    font-size: 50px;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+.card .card_right h3{
+    position: relative;
+    font-style: italic;
+    font-size: 25px;
+    top: 100px;
+    left: 50px;
+}
+.card_back .card_right p{
+    font-size: 18px;
+    position: relative;
+    padding: 0 40px;
+    
+    top: 20px;
+
+}
+.skills{
+    display: flex;
+    flex-flow: row wrap;
+}
+.skills div {
+    position: relative;
+    width: 25%;
+    height: calc(width);
+    
+    top: 20px;
+    text-align: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+.skillsdiv p{
+    display: flex;
+    position: relative;
+    top: -50px;
+    
+}
+.skills div img{
+    width: 30%;
+    padding: 0;
+    margin: 0;
+    background-color: yellowgreen;
+}
+
+
